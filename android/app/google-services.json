@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "849205877644",
+    "firebase_url": "https://arpitsoccerleague.firebaseio.com",
+    "project_id": "arpitsoccerleague",
+    "storage_bucket": "arpitsoccerleague.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849205877644:android:db901e79086449e8",
+        "android_client_info": {
+          "package_name": "arpit.bansal.arpit_soccer_league"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849205877644-u235agtv6big55aj7klv038e6pg2ek2n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "arpit.bansal.arpit_soccer_league",
+            "certificate_hash": "1c733d6bab150cb837f1979dd5bfe49261f30d93"
+          }
+        },
+        {
+          "client_id": "849205877644-bbk2crt99fnce4scl24lvbpd5gbad0h3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-2Y5SZ8Pz3CRPPOtw6F1gCvImJrvH2gA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849205877644-bbk2crt99fnce4scl24lvbpd5gbad0h3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

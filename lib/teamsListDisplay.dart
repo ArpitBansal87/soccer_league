@@ -24,13 +24,17 @@ class TeamsPage extends StatefulWidget {
 }
 
 class _TeamsPage extends State<TeamsPage> {
+  TextEditingController teamNameController = TextEditingController();
+  TextEditingController teamPrimaryColorsController = TextEditingController();
+  TextEditingController teamCaptainNameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
               colorFilter: new ColorFilter.mode(
-                  Colors.lightGreen.withOpacity(0.2), BlendMode.dstATop),
+                  Colors.lightGreen.withOpacity(0.8), BlendMode.dstATop),
               image:
                   AssetImage("images/hussain-ibrahim-gZoRGh-GGKY-unsplash.jpg"),
               fit: BoxFit.cover)),
@@ -59,14 +63,55 @@ class _TeamsPage extends State<TeamsPage> {
                         children: snapshot.data.documents
                             .map((DocumentSnapshot document) {
                           return new ListTile(
-                            title: new Text(document['teamCaptain']),
-                            subtitle: new Text(document['teamName']),
+                            title: new Text(document['teamCaptain'],
+                              style: TextStyle(color: Colors.white)),
+                            subtitle: new Text(document['teamName'],
+                                style: TextStyle(color: Colors.white)),
                           );
                         }).toList(),
                       );
                   }
                 },
               ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: TextField(
+                    controller: teamNameController,
+                    onChanged: (v) => teamNameController.text = v,
+                    decoration: InputDecoration(
+                      labelText: 'Team Name',
+                    )),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: TextField(
+                    controller: teamCaptainNameController,
+                    onChanged: (v) => teamCaptainNameController.text = v,
+                    decoration: InputDecoration(
+                      labelText: 'Team Captain Name',
+                    )),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: TextField(
+                    controller: teamPrimaryColorsController,
+                    onChanged: (v) => teamPrimaryColorsController.text = v,
+                    decoration: InputDecoration(
+                      labelText: 'Teams Primary Colors',
+                    )),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Builder(
+                  builder: (context) {
+                    return RaisedButton(
+                      onPressed: () => print('PRESSED'),
+                      color: Colors.indigoAccent,
+                      child: Text('Submit Player Info'),
+                    );
+                  },
+                ),
               ),
         ])),
       ),

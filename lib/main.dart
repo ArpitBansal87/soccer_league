@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              colorFilter: new ColorFilter.mode(Colors.lightGreen.withOpacity(0.8), BlendMode.dstATop),
+              colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop),
               image: AssetImage("images/hussain-ibrahim-gZoRGh-GGKY-unsplash.jpg"), fit: BoxFit.cover)),
       child: Scaffold(
         backgroundColor: Colors.transparent,

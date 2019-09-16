@@ -1,21 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:arpit_soccer_league/authentication.dart';
-import 'package:arpit_soccer_league/routesList.dart';
+import 'package:provider/provider.dart';
+import 'Core/ViewModels/teamViewModel.dart';
+import 'locator.dart';
+import './UI/router.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  setupLocator();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'TCS Premier League',
-      theme: ThemeData(
-       primarySwatch: Colors.blue,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(builder: (_) => locator<TeamViewModel>()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        title: 'TCS Premier League',
+        theme: ThemeData( primarySwatch: Colors.blue,),
+        onGenerateRoute: Router.generateRoute,
       ),
-      home: MyHomePage(title: 'TCS Premier League'),
-      routes: routesList.routes,
     );
+//    return MaterialApp(
+//      title: 'TCS Premier League',
+//      theme: ThemeData(
+//       primarySwatch: Colors.blue,
+//      ),
+//      home: MyHomePage(title: 'TCS Premier League'),
+//      routes: routesList.routes,
+//      onGenerateRoute: Router.generateRoute,
+//    );
   }
 }
 
@@ -82,6 +101,6 @@ class LoginButton extends StatelessWidget {
   login(BuildContext context) {
     authService.googleSignIn();
     Navigator.of(context).pop();
-    Navigator.of(context).pushNamed('/teams');
+    Navigator.of(context).pushNamed('/');
   }
 }

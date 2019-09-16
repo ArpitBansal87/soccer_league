@@ -5,6 +5,7 @@ class RoutesList{
 
   final Map<String, WidgetBuilder> routes ={
     '/teams': (BuildContext context) => new TeamsList(),
+    '/': (BuildContext context) => new TeamsList(),
   };
 }
 

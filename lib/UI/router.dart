@@ -1,3 +1,4 @@
+import 'package:arpit_soccer_league/UI/Views/addTeam.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'Views/homePage.dart';
@@ -21,7 +22,7 @@ class Router {
         );
       case '/addTeam' :
         return MaterialPageRoute(
-            builder: (_)=> TeamsDetails()
+            builder: (_)=> addTeamDetails()
         );
       case '/addPlayer' :
         return MaterialPageRoute(
